@@ -176,7 +176,7 @@ export default function Home() {
                 className="btn-primary"
                 onClick={() => {
                   const link = document.createElement('a')
-                  link.href = '/resume_vaishnavi.pdf'
+                  link.href = '/Vaishnavi\'s_Resume_New1.pdf'
                   link.download = 'Vaishnavi_Resume.pdf'
                   document.body.appendChild(link)
                   link.click()
