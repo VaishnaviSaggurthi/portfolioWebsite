@@ -14,6 +14,17 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    const validProviders = ['gmail.com', 'outlook.com', 'yahoo.com', 'hotmail.com', 'icloud.com', 'protonmail.com']
+    const emailDomain = formData.email.split('@')[1]?.toLowerCase()
+    
+    if (!emailRegex.test(formData.email) || !validProviders.includes(emailDomain)) {
+      alert('Please enter a correct email address')
+      return
+    }
+    
     setIsSubmitting(true)
     
     try {
@@ -914,21 +925,21 @@ export default function Home() {
             
             {/* Contact Details */}
             <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-              <div className="glass p-6 rounded-xl text-center">
+              <a href="mailto:vaishnavisaggurthi@gmail.com" className="glass p-6 rounded-xl text-center hover-lift">
                 <Mail className="w-8 h-8 mx-auto mb-4 text-primary" />
                 <h3 className="font-semibold mb-2 text-white">Email</h3>
                 <p className="text-gray-400">vaishnavisaggurthi@gmail.com</p>
-              </div>
-              <div className="glass p-6 rounded-xl text-center">
+              </a>
+              <a href="https://github.com/VaishnaviSaggurthi" target="_blank" rel="noopener noreferrer" className="glass p-6 rounded-xl text-center hover-lift">
                 <Github className="w-8 h-8 mx-auto mb-4 text-primary" />
                 <h3 className="font-semibold mb-2 text-white">GitHub</h3>
                 <p className="text-gray-400">@VaishnaviSaggurthi</p>
-              </div>
-              <div className="glass p-6 rounded-xl text-center">
+              </a>
+              <a href="https://www.linkedin.com/in/vaishnavisaggurthi/" target="_blank" rel="noopener noreferrer" className="glass p-6 rounded-xl text-center hover-lift">
                 <Linkedin className="w-8 h-8 mx-auto mb-4 text-primary" />
                 <h3 className="font-semibold mb-2 text-white">LinkedIn</h3>
                 <p className="text-gray-400">@vaishnavisaggurthi</p>
-              </div>
+              </a>
             </div>
             
             <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
