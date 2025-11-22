@@ -12,28 +12,15 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const fullText = "I'm a Full Stack Developer"
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
     
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      })
-      
-      if (response.ok) {
-        alert('Message sent successfully!')
-        setFormData({ name: '', email: '', subject: '', message: '' })
-      } else {
-        alert('Failed to send message')
-      }
-    } catch (error) {
-      alert('Error sending message')
-    } finally {
-      setIsSubmitting(false)
-    }
+    const { name, email, subject, message } = formData
+    const mailtoLink = `mailto:vaishnavisaggurthi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`
+    
+    window.location.href = mailtoLink
+    alert('Opening your email client...')
+    setFormData({ name: '', email: '', subject: '', message: '' })
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -950,8 +937,8 @@ export default function Home() {
                   required
                   className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-lg focus:border-primary focus:outline-none transition-colors resize-none"
                 />
-                <button type="submit" className="btn-primary w-full" disabled={isSubmitting}>
-                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                <button type="submit" className="btn-primary w-full">
+                  Send Message
                 </button>
               </form>
             </div>

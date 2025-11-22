@@ -1,203 +1,183 @@
-# Dynamic Portfolio Website
+# Vaishnavi Saggurthi - Portfolio Website
 
-A highly dynamic and visually unique personal portfolio website built with modern web technologies. This portfolio goes beyond a standard static site, featuring advanced animations, interactive elements, and a unique design that stands out to potential employers.
+> A clean, minimal, and modern portfolio website showcasing my journey as a Software Developer
 
-## 🌟 Unique Features
+## ✨ Features
 
-### Dynamic Design Elements
-- **Custom Interactive Cursor**: Responsive cursor with visual feedback and hover effects
-- **Particle Background System**: Dynamic particle system that reacts to mouse movement with connected nodes
-- **Command-Line Navigation**: Innovative CLI-style navigation system (Ctrl+K to activate)
-- **Glassmorphism UI**: Modern glass-effect components with backdrop blur
-- **Scroll-Triggered Animations**: Smooth animations that trigger as elements enter the viewport
-
-### Advanced Functionality
-- **Project Showcase**: Each project has a dedicated page with live demos embedded via iframe
-- **Interactive Resume**: Animated timeline with work experience and education
-- **Dynamic Filtering**: Tag-based project filtering with smooth transitions
-- **Video Previews**: Hover-to-play video demonstrations of projects
-- **Responsive Design**: Fully optimized for all devices and screen sizes
-
-### Technical Excellence
-- **Performance Optimized**: High Lighthouse scores with lazy loading and code splitting
-- **SEO Friendly**: Comprehensive meta tags, Open Graph, and Twitter Card support
-- **Type Safety**: Full TypeScript implementation for better development experience
-- **Modern Architecture**: Component-based architecture with reusable elements
+- **🎨 Minimal Design** - Clean, professional aesthetic with subtle animations
+- **📱 Fully Responsive** - Optimized for mobile, tablet, and desktop
+- **🚀 Fast Performance** - Built with Next.js 14 and optimized for speed
+- **🎭 Interactive Elements** - Smooth animations with Framer Motion
+- **📧 Contact Form** - Functional contact form with API integration
+- **📄 Resume Download** - Direct PDF download functionality
+- **🏆 Certifications** - Showcase of professional certifications
+- **💻 Coding Profiles** - Links to coding platform profiles
 
 ## 🛠️ Tech Stack
 
-### Frontend
-- **Framework**: Next.js 14 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS with custom animations
-- **Animations**: Framer Motion for smooth transitions
-- **Icons**: Lucide React for consistent iconography
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **3D Graphics:** Three.js with React Three Fiber
+- **Deployment:** Netlify
 
-### Features & Libraries
-- **Intersection Observer**: React Intersection Observer for scroll animations
-- **Markdown Support**: React Markdown for blog functionality
-- **Date Handling**: date-fns for date formatting
-- **Canvas Animations**: Custom particle system with HTML5 Canvas
-
-### Development Tools
-- **Linting**: ESLint with Next.js configuration
-- **Type Checking**: TypeScript with strict mode
-- **Build Tool**: Next.js built-in bundler with optimization
-- **Package Manager**: npm with lock file for consistent installs
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Node.js 18+ 
-- npm or yarn package manager
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/dynamic-portfolio.git
-   cd dynamic-portfolio
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Start development server**
-   ```bash
-   npm run dev
-   ```
-
-4. **Open in browser**
-   Navigate to `http://localhost:3000`
-
-### Build for Production
+## 🚀 Quick Start
 
 ```bash
-# Build the application
-npm run build
+# Clone the repository
+git clone https://github.com/VaishnaviSaggurthi/portfolioWebsite.git
 
-# Start production server
-npm start
+# Navigate to project directory
+cd portfolioWebsite
 
-# Export static files (optional)
-npm run export
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Open http://localhost:3000
 ```
 
 ## 📁 Project Structure
 
 ```
-portfolio/
-├── app/                    # Next.js app directory
-│   ├── components/         # Reusable components
-│   │   ├── CustomCursor.tsx
+portfolioWebsite/
+├── app/
+│   ├── components/          # Reusable UI components
+│   │   ├── Navigation.tsx   # Emoji-based navigation
 │   │   ├── ParticleBackground.tsx
-│   │   └── CommandNavigation.tsx
-│   ├── projects/          # Projects pages
-│   │   ├── [id]/          # Dynamic project routes
-│   │   └── page.tsx       # Projects listing
-│   ├── about/             # About page
-│   ├── blog/              # Blog functionality
-│   ├── contact/           # Contact page
-│   ├── globals.css        # Global styles
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
-├── data/                  # Static data files
-│   └── projects.json      # Project information
-├── public/                # Static assets
+│   │   ├── CommandNavigation.tsx
+│   │   └── ProjectDetailClient.tsx
+│   ├── about/              # About page
+│   ├── certificates/       # Certifications showcase
+│   ├── coding-profiles/    # Coding platform links
+│   ├── contact/           # Contact form
+│   ├── projects/          # Projects showcase
+│   │   └── [id]/         # Dynamic project pages
+│   ├── skills/           # Skills and technologies
+│   ├── globals.css       # Global styles
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Home page
+├── data/
+│   ├── projects.json     # Project information
+│   └── contacts.json     # Contact data
+├── public/
+│   ├── certificates/     # Certificate PDFs
+│   └── resume_vaishnavi.pdf
 └── README.md
 ```
 
-## 🎨 Customization
+## 🎯 Key Sections
 
-### Personal Information
-1. Update project data in `data/projects.json`
-2. Modify personal details in `app/about/page.tsx`
-3. Add your resume PDF to `public/` directory
-4. Update social links and contact information
+### 🏠 Home
+- Hero section with animated typing effect
+- Social media links (GitHub, LinkedIn, Email)
+- Resume download button
 
-### Styling
-1. Modify color scheme in `tailwind.config.js`
-2. Update animations in `app/globals.css`
-3. Customize component styles in individual files
-4. Adjust particle system parameters in `ParticleBackground.tsx`
+### 👤 About
+- Personal introduction and journey
+- Technical expertise overview
+- Professional background
 
-### Content
-1. Add project images/videos to `public/projects/`
-2. Update meta tags in `app/layout.tsx`
-3. Modify navigation commands in `CommandNavigation.tsx`
-4. Add blog posts in markdown format
+### 🎓 Education
+- Academic timeline with institutions
+- Degree information and duration
+- Visual timeline design
 
-## 🌐 Deployment
+### 💻 Skills
+- Technology stack with icons
+- Programming languages and frameworks
+- Tools and platforms
 
-### Vercel (Recommended)
-```bash
-# Install Vercel CLI
-npm install -g vercel
+### 💼 Experience
+- **Amazon SDE Intern** (Jun 2025 - Aug 2025)
+- **IBM SkillsBuild ML Intern** (Oct 2024 - Nov 2024)
+- Certificate downloads available
 
-# Deploy
-vercel
+### 🚀 Projects
+- **HUIDSN** - Gesture-based HCI system
+- **Smart Study Hub** - Educational platform
+- **MemorEase** - AI-powered learning tool
 
-# Production deployment
-vercel --prod
-```
+### 🏆 Certifications
+- AWS certifications (Generative AI, ML Foundations)
+- Google Cloud certifications (Gemini API, Vertex AI)
+- Cisco Cybersecurity certification
 
-### Netlify
-1. Build the project: `npm run build`
-2. Upload the `out` folder to Netlify
-3. Configure build settings:
-   - Build command: `npm run build`
-   - Publish directory: `out`
+### ⚡ Coding Profiles
+- LeetCode, Codeforces, CodeChef, HackerRank
+- Direct links to profiles
 
-### Custom Server
+## 🎨 Design Philosophy
+
+- **Minimal & Clean** - Focus on content over flashy effects
+- **Professional** - Suitable for recruiters and employers
+- **Accessible** - High contrast, readable fonts, mobile-friendly
+- **Performance First** - Fast loading, optimized images
+
+## 🚀 Deployment
+
+### Netlify (Current)
 ```bash
 # Build for production
 npm run build
 
-# Start production server
-npm start
+# Deploy to Netlify
+# Connected to GitHub for auto-deployment
 ```
 
-## 📊 Performance Features
+### Vercel Alternative
+```bash
+npm install -g vercel
+vercel --prod
+```
 
-- **Code Splitting**: Automatic route-based code splitting
-- **Image Optimization**: Next.js built-in image optimization
-- **Lazy Loading**: Components and images load when needed
-- **Caching**: Optimized caching strategies for static assets
-- **Bundle Analysis**: Built-in bundle analyzer for optimization
+## 📱 Mobile Optimization
 
-## 🔧 Development
+- Responsive typography scaling
+- Touch-friendly navigation
+- Optimized button sizes (44px minimum)
+- Horizontal scroll prevention
+- Reduced particle effects on mobile
 
-### Adding New Projects
-1. Add project data to `data/projects.json`
-2. Add project assets to `public/projects/`
-3. The project will automatically appear in the projects grid
+## 🔧 Customization
 
-### Creating Blog Posts
-1. Create markdown files in `data/blog/`
-2. Include frontmatter with title, date, and tags
-3. Posts will be automatically rendered with syntax highlighting
+### Update Personal Info
+1. Edit `app/layout.tsx` for meta tags
+2. Update social links in `app/page.tsx`
+3. Replace resume in `public/resume_vaishnavi.pdf`
+4. Modify project data in `data/projects.json`
 
-### Custom Components
-1. Create new components in `app/components/`
-2. Follow the existing TypeScript patterns
-3. Use Framer Motion for animations
-4. Implement responsive design with Tailwind CSS
+### Styling Changes
+1. Colors: `app/globals.css`
+2. Components: Individual `.tsx` files
+3. Animations: Framer Motion configurations
 
-## 🎯 Unique Selling Points
+## 📊 Performance
 
-1. **Interactive Command Navigation**: Unique CLI-style navigation system
-2. **Dynamic Particle System**: Mouse-reactive background animations
-3. **Project Live Demos**: Embedded live demonstrations of projects
-4. **Glassmorphism Design**: Modern, translucent UI elements
-5. **Performance Optimized**: High Lighthouse scores across all metrics
-6. **Fully Responsive**: Optimized for all devices and screen sizes
+- **Lighthouse Score:** 95+ across all metrics
+- **Bundle Size:** Optimized with code splitting
+- **Loading Speed:** < 2s on 3G networks
+- **SEO Friendly:** Proper meta tags and structure
 
-## 📝 License
+## 🤝 Contributing
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This is a personal portfolio, but suggestions and improvements are welcome!
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📄 License
+
+MIT License - feel free to use this as a template for your own portfolio!
 
 ---
 
-**Built with ❤️ and modern web technologies**
+**Built with 💻 by Vaishnavi Saggurthi**
+
+[Live Demo](https://vaishnavisaggurthi-portfolio.netlify.app) • [GitHub](https://github.com/VaishnaviSaggurthi) • [LinkedIn](https://linkedin.com/in/vaishnavisaggurthi)
