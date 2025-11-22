@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion'
 import CommandNavigation from '../../components/CommandNavigation'
-import Link from 'next/link'
-import { ArrowLeft, ExternalLink, Github, Calendar, Tag } from 'lucide-react'
+import ProjectDetailClient from '../../components/ProjectDetailClient'
 import { notFound } from 'next/navigation'
 
 interface Project {
