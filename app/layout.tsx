@@ -7,15 +7,15 @@ const poppins = Poppins({
 })
 
 export const metadata = {
-  title: 'Your Name - Full Stack Developer',
+  title: 'Vaishnavi Saggurthi - Full Stack Developer',
   description: 'Professional portfolio showcasing full-stack development skills and projects',
   keywords: 'full stack developer, web development, react, node.js, portfolio',
-  authors: [{ name: 'Your Name' }],
+  authors: [{ name: 'Vaishnavi Saggurthi' }],
   openGraph: {
-    title: 'Your Name - Full Stack Developer',
+    title: 'Vaishnavi Saggurthi - Full Stack Developer',
     description: 'Professional portfolio showcasing full-stack development skills',
     url: 'https://yourportfolio.com',
-    siteName: 'Your Portfolio',
+    siteName: 'Vaishnavi Portfolio',
     images: [
       {
         url: '/og-image.jpg',
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Your Name - Full Stack Developer',
+    title: 'Vaishnavi Saggurthi - Full Stack Developer',
     description: 'Professional portfolio showcasing full-stack development skills',
     images: ['/og-image.jpg'],
   },

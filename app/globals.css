@@ -19,6 +19,8 @@ body {
   background: #0a0a0a;
   color: #ffffff;
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Scrollbar */
@@ -219,4 +221,47 @@ body {
   background: #00d4ff;
   color: #000;
   transform: translateY(-2px);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+  .gradient-text {
+    font-size: 0.9em;
+    line-height: 1.2;
+  }
+  
+  .typing-animation {
+    font-size: 0.9em;
+  }
+  
+  .btn-primary, .btn-outline {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .glass {
+    padding: 1rem;
+  }
+  
+  .project-card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Prevent horizontal scroll */
+  .particle {
+    display: none;
+  }
+  
+  /* Better touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .gradient-text {
+    font-size: 0.95em;
+  }
 }

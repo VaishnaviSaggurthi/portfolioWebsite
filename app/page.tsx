@@ -107,7 +107,7 @@ export default function Home() {
       <ScrollToTop />
       
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center px-4 pt-20 relative overflow-hidden">
+      <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-16 sm:pt-20 relative overflow-hidden">
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           {[...Array(50)].map((_, i) => (
@@ -125,27 +125,27 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
+        <div className="max-w-4xl mx-auto text-center relative z-10 w-full">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight"
               initial={{ scale: 0.5 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Hi, I'm <span className="gradient-text whitespace-nowrap">Vaishnavi Saggurthi</span>
+              Hi, I'm <span className="gradient-text block sm:inline">Vaishnavi Saggurthi</span>
             </motion.h1>
             
-            <div className="text-2xl md:text-3xl text-gray-300 mb-8 h-12">
+            <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 mb-8 h-8 sm:h-10 md:h-12">
               <span className="typing-animation">{typedText}</span>
             </div>
             
             <motion.p
-              className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto"
+              className="text-sm sm:text-base lg:text-lg text-gray-400 mb-8 sm:mb-12 max-w-2xl mx-auto px-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1 }}
@@ -154,7 +154,7 @@ export default function Home() {
             </motion.p>
             
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2 }}
@@ -180,7 +180,7 @@ export default function Home() {
 
             {/* Social Links */}
             <motion.div
-              className="flex justify-center space-x-6 relative z-20"
+              className="flex justify-center space-x-4 sm:space-x-6 relative z-20"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.4 }}
