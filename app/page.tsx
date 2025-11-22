@@ -12,15 +12,30 @@ export default function Home() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const fullText = "I'm a Full Stack Developer"
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    setIsSubmitting(true)
     
-    const { name, email, subject, message } = formData
-    const mailtoLink = `mailto:vaishnavisaggurthi@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`
-    
-    window.location.href = mailtoLink
-    alert('Opening your email client...')
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    try {
+      const response = await fetch('https://formspree.io/f/xankjznk', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      
+      if (response.ok) {
+        alert('Message sent successfully! I will get back to you soon.')
+        setFormData({ name: '', email: '', subject: '', message: '' })
+      } else {
+        throw new Error('Failed to send')
+      }
+    } catch (error) {
+      alert('Failed to send message. Please email me directly at vaishnavisaggurthi@gmail.com')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -893,9 +908,28 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Get In <span className="gradient-text">Touch</span>
             </h2>
-            <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
               Let's work together to bring your ideas to life
             </p>
+            
+            {/* Contact Details */}
+            <div className="grid md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+              <div className="glass p-6 rounded-xl text-center">
+                <Mail className="w-8 h-8 mx-auto mb-4 text-primary" />
+                <h3 className="font-semibold mb-2 text-white">Email</h3>
+                <p className="text-gray-400">vaishnavisaggurthi@gmail.com</p>
+              </div>
+              <div className="glass p-6 rounded-xl text-center">
+                <Github className="w-8 h-8 mx-auto mb-4 text-primary" />
+                <h3 className="font-semibold mb-2 text-white">GitHub</h3>
+                <p className="text-gray-400">@VaishnaviSaggurthi</p>
+              </div>
+              <div className="glass p-6 rounded-xl text-center">
+                <Linkedin className="w-8 h-8 mx-auto mb-4 text-primary" />
+                <h3 className="font-semibold mb-2 text-white">LinkedIn</h3>
+                <p className="text-gray-400">@vaishnavisaggurthi</p>
+              </div>
+            </div>
             
             <div className="glass p-8 rounded-2xl max-w-2xl mx-auto">
               <form className="space-y-6" onSubmit={handleSubmit}>
@@ -937,8 +971,8 @@ export default function Home() {
                   required
                   className="w-full px-4 py-3 bg-transparent border border-gray-600 rounded-lg focus:border-primary focus:outline-none transition-colors resize-none"
                 />
-                <button type="submit" className="btn-primary w-full">
-                  Send Message
+                <button type="submit" className="btn-primary w-full" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>
